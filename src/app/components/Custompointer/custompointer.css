@@ -1,0 +1,46 @@
+/* custompointer.css */
+body {
+  --mouse-x: 0px;
+  --mouse-y: 0px;
+  background: radial-gradient(circle 400px at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.3), rgba(0, 123, 255, 0.2), #0a192f) fixed;
+  transition: background 0.3s ease-out; /* Smooth transition for background */
+}
+
+#custom-pointer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 123, 255, 0.7); /* Shiny blue */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease-out; /* Smooth transition for slight delay effect */
+  transform: translate(-50%, -50%); /* Ensure the pointer is centered on the cursor */
+}
+
+#custom-pointer::before,
+#custom-pointer::after {
+  content: "";
+  position: absolute;
+  background: white;
+  mix-blend-mode: difference;
+}
+
+#custom-pointer::before {
+  width: 2px;
+  height: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#custom-pointer::after {
+  width: 20px;
+  height: 2px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
