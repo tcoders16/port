@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useState } from 'react';
 import Nameleft from "../Nameleft/page";
 import Interactivebuttons from "../Interactivebuttons/page";
